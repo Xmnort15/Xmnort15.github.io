@@ -14259,19 +14259,8 @@ a.anchor-link {
 
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h1 id="Does-Covid-19-affect-Los-Angeles-Crime?">Does Covid-19 affect Los Angeles Crime?<a class="anchor-link" href="#Does-Covid-19-affect-Los-Angeles-Crime?">&#182;</a></h1><h2 id="Brian-Liu">Brian Liu<a class="anchor-link" href="#Brian-Liu">&#182;</a></h2>
-</div>
-</div>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h1 id="Introduction">Introduction<a class="anchor-link" href="#Introduction">&#182;</a></h1><p>For this tutorial we will be analyzing LAPD crime date from 2010 to the present(2022) to see whether Covid-19 has any affect to the number of crimes or types of crimes in Los Angeles. Los Angeles is a very popular location for vacations so hopefully this tutorial could shed some light on what you should watch out for with Covid-19 around. Now onto the first step of the tutorial.</p>
-
-</div>
-</div>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h1 id="Getting-the-Data">Getting the Data<a class="anchor-link" href="#Getting-the-Data">&#182;</a></h1><p>Data collection is the first part of the data science pipeline. There are various means of getting data whether it be creating your own dataset, finding a file online, or scraping the data from a website's HTML. In our case, we're lucky and don't need to scrape the data. We'll instead be grabbing a file of crime data from Los Angeles' public data website <a href="https://data.lacity.org/">https://data.lacity.org/</a>. If you want to know what web scraping is and why it is a painstaking process, here is a good resource: <a href="https://realpython.com/beautiful-soup-web-scraper-python/">link</a></p>
-<p>For this tutorial the following tools are needed. The ones commonly used in most data analysis include: <a href="https://pandas.pydata.org/docs/user_guide/index.html#user-guide">pandas</a>, <a href="https://numpy.org/doc/stable/user/index.html#user">numpy</a>, <a href="https://matplotlib.org/stable/users/index.html">matplotlib</a>, and <a href="https://scikit-learn.org/stable/user_guide.html">scikit-learn</a></p>
+<h1 id="Does-Covid-19-Affect-Los-Angeles-Crime?">Does Covid-19 Affect Los Angeles Crime?<a class="anchor-link" href="#Does-Covid-19-Affect-Los-Angeles-Crime?">&#182;</a></h1><h2 id="Brian-Liu">Brian Liu<a class="anchor-link" href="#Brian-Liu">&#182;</a></h2><hr>
+<h2 id="What-you-need">What you need<a class="anchor-link" href="#What-you-need">&#182;</a></h2><p>The following tools are needed to follow this tutorial. The ones commonly used in most data analysis include: <a href="https://pandas.pydata.org/docs/user_guide/index.html#user-guide">pandas</a>, <a href="https://numpy.org/doc/stable/user/index.html#user">numpy</a>, <a href="https://matplotlib.org/stable/users/index.html">matplotlib</a>, and <a href="https://scikit-learn.org/stable/user_guide.html">scikit-learn</a></p>
 
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
@@ -14303,7 +14292,20 @@ a.anchor-link {
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>For us to view the data we will store it in a dataframe. A dataframe is like a table where each row is an entry in the table and the columns are the attributes/categories. To store the data in the dataframe we will first download a csv file off the website and use <a href="https://www.w3schools.com/python/pandas/pandas_csv.asp">pandas.read_csv()</a> to convert this csv file into a dataframe. In this scenerio the LAPD have 2 different datasets for 2010-2019 and 2020-Present so we'll have to create 2 dataframes.</p>
+<h1 id="Introduction">Introduction<a class="anchor-link" href="#Introduction">&#182;</a></h1><p>For this tutorial we will be analyzing LAPD crime date from 2010 to the present(2022) to see whether Covid-19 has any affect to the number of crimes or types of crimes in Los Angeles. Los Angeles is a very popular location for vacations so hopefully this tutorial could shed some light on whether there could be increased dangers with Covid-19 around. Now onto the first step of the tutorial.</p>
+
+</div>
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h1 id="Getting-the-Data">Getting the Data<a class="anchor-link" href="#Getting-the-Data">&#182;</a></h1><p>Data collection is the first part of the data science pipeline. There are various means of getting data whether it be creating your own dataset, finding a file online, or scraping the data from a website's HTML. In our case, we're lucky and don't need to scrape the data. We'll instead be grabbing a file of crime data from Los Angeles' public data website <a href="https://data.lacity.org/">https://data.lacity.org/</a>.</p>
+<p>If you want to know what web scraping is and why it is a painstaking process, here is a good resource: <a href="https://realpython.com/beautiful-soup-web-scraper-python/">link</a></p>
+
+</div>
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>For us to view the data we will store it in a dataframe. A dataframe is like a table where each row is an entry in the table and the columns are the attributes/categories of an entry. To store the data in the dataframe we will first download a csv file off the website and use <a href="https://www.w3schools.com/python/pandas/pandas_csv.asp">pandas.read_csv()</a> to convert this csv file into a dataframe. In this scenerio the LAPD have 2 different datasets for 2010-2019 and 2020-Present so we'll have to create 2 dataframes.</p>
 <p>Los Angeles crime data by the LAPD: <a href="https://data.lacity.org/Public-Safety/Crime-Data-from-2010-to-2019/63jg-8b9z">2010-2019</a> and <a href="https://data.lacity.org/Public-Safety/Crime-Data-from-2020-to-Present/2nrs-mtv8">2020-Present</a></p>
 
 </div>
@@ -14325,9 +14327,9 @@ a.anchor-link {
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>Next we'll want covid-19 data from Los Angeles, but in this case there isn't a simple csv that only includes Los Angeles so we'll have to grab a csv that includes every county in the US. We'll have to modify this data to get only Los Angeles' data. We will be using a URL this time so there's no need to download a file before reading the data.</p>
+<p>Next, we'll want covid-19 data from Los Angeles, but in this case there isn't a simple csv that only includes Los Angeles so we'll have to grab a csv that includes every county in the US. We'll have to modify this data to get only Los Angeles' data. We will be using a URL this time so there's no need to download a file before reading the data.</p>
 <p>Covid-19 data from the New York Times: <a href="https://github.com/nytimes/covid-19-data">link</a></p>
-<p>Be warned that due to Githubs 100MB file limit, the us-counties.csv I use will likely be no longer up to date for you. Therefore, you will likly have to combine the us-counties-2020.csv up to the us-counties-202#.csv dataframes in order to get the full picture of the data. This will be similar to what we do in the next step with the LAPD crime datasets.</p>
+<p>Be warned that due to Githubs 100MB file limit, the us-counties.csv I use will likely be no longer up to date for you. Therefore, you will likely have to combine the us-counties-2020.csv up to the us-counties-202#.csv dataframes in order to get the full picture of the data. This will be similar to what we do in the next step with the LAPD crime datasets.</p>
 
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
@@ -14669,7 +14671,7 @@ a.anchor-link {
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <h1 id="Processing-the-Data">Processing the Data<a class="anchor-link" href="#Processing-the-Data">&#182;</a></h1><p>The next step of the data science pipeline is processing the data, otherwise known as data wrangling. Most of the time the dataframe we get from reading a file will have issues. So in this step we will be fixing up the dataframe so that it will be easier to understand and easier to analyze. An important thing to note is often times this is the step that requires the <a href="https://medium.com/analytics-vidhya/a-data-cleaning-journey-2b0146407e44#:~:text=Whether%20you%20are%20a%20data%20engineer%20or%20a%20data%20scientist,from%20the%20data%20science%20process.">most time</a> for a data scientist.</p>
 <p>More info on data wrangling at: <a href="https://online.hbs.edu/blog/post/data-wrangling">link</a></p>
-<h4 id="We'll-start-with-cleaning-our-LAPD-crime-dataframe.">We'll start with cleaning our LAPD crime dataframe.<a class="anchor-link" href="#We'll-start-with-cleaning-our-LAPD-crime-dataframe.">&#182;</a></h4><p>One of the first things to do is to see if our dataframe contains any missing or duplicated data in its entries. Of course if you won't be using an attribute in your dataframe that has missing values then there's not much of a reason. With our crime dataframe, we want to first check if there are duplicates so we need to use something that can be unique to each crime. It just so happens that each crime has a unique 'DR_NO' so we can count how many of these unique 'DR_NO' values are in the dataframe and compare it to the number of entries in the dataframe.</p>
+<h4 id="We'll-start-with-cleaning-our-LAPD-crime-dataframe.">We'll start with cleaning our LAPD crime dataframe.<a class="anchor-link" href="#We'll-start-with-cleaning-our-LAPD-crime-dataframe.">&#182;</a></h4><p>One of the first things to do is to see if our dataframe contains any missing or duplicated data in its entries. Of course, if you won't be using an attribute in your dataframe that has missing values then there's not much of a reason. With our crime dataframe, we want to first check if there are duplicates so we need to use something that can be unique to each crime. It just so happens that each crime has a unique 'DR_NO' so we can count how many of these unique 'DR_NO' values are in the dataframe and compare it to the number of entries in the dataframe.</p>
 <p>Info about how to access columns or rows in the dataframe here: <a href="https://pandas.pydata.org/pandas-docs/stable/getting_started/intro_tutorials/03_subset_data.html">link</a></p>
 
 </div>
@@ -14790,7 +14792,7 @@ Are there missing values in column &#39;Crm Cd Desc&#39;: False
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>After fixing the date, now we need to convert the hour a crime occured from integer to datetime. It's important to always check the datatype of a value in your dataframe as this can make it much easier to discerne how you go about cleaning the data.</p>
+<p>After fixing the date, now we need to convert the hour a crime occured from integer to datetime. It's important to always check the datatype of a value in your dataframe as this can make it much easier to discern how you go about cleaning the data.</p>
 
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
@@ -14833,7 +14835,7 @@ Are there missing values in column &#39;Crm Cd Desc&#39;: False
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>In order to be converted to a datetime object we'll have to first convert the time from an integer to a string then we can convert the string into datetime. However, we must first format the string so that it can be accepted by the pd.datetime() function. We do this by making every converted string into the same length by filling them with leading zeroes until they have a length of 4. Then add a semicolon in the middle of the string to seperate the numbers that correspond to hours from the minutes.</p>
+<p>In order to be converted to a datetime object we'll have to first convert the time from an integer to a string then we can convert the string into datetime. However, we must first format the string so that it can be accepted by the pd.datetime() function. We do this by making every converted string into the same length by filling them with leading zeroes until they have a length of 4. Then add a semicolon in the middle of the string to separate the numbers that correspond to hours from the minutes.</p>
 
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
@@ -15116,7 +15118,7 @@ Are there missing values in column &#39;cases&#39;: False
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>Looks like there's no missing or duplicate values in our covid-19 dataframe. However, The covid cases data from the New York Times only records the cumulative number of covid cases. So if we want to view the number of cases that occur each day we'll have to subtract the cumulative number of covid cases from the day before with the cumulative cases today.</p>
+<p>Looks like there's no missing or duplicate values in our covid-19 dataframe. However, the covid cases data from the New York Times only records the cumulative number of covid cases. So if we want to view the number of cases that occur each day we'll have to subtract the cumulative number of covid cases from the day before with the cumulative cases today.</p>
 
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
@@ -15261,7 +15263,7 @@ Are there missing values in column &#39;cases&#39;: False
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>Even though the covid-19 dataframe's entries start in January of 2020, covid cases only start to increase in March. So if we were to see how crime is affected during covid then it would make more sense to mark where exactly when covid was rampent. Thus we will be marking every crime entry that occurs March 2020 or later with a 'Y' and everything else with a 'N'</p>
+<p>Even though the covid-19 dataframe's entries start in January of 2020, covid cases only start to increase in March. So, if we were to see how crime is affected during covid then it would make more sense to mark where exactly when covid was rampent. Thus, we will be marking every crime entry that occurs March 2020 or later with a 'Y' and everything else with a 'N'</p>
 
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
@@ -15285,7 +15287,7 @@ Are there missing values in column &#39;cases&#39;: False
 <p>For more detailed info on what is data analysis: <a href="https://towardsdatascience.com/exploratory-data-analysis-8fc1cb20fd15">link</a></p>
 <p>In this tutorial we will mainly be plotting crime data overtime to see if Covid-19 had any effect on the number of crimes, types of crimes, or times of crimes. There are many other areas we can look at like whether the season affects covid-19 and crime or if there is a change in locations of crimes with covid-19. But for now, we will only be doing much more general covid-19 and crime analysis so you can potentially try one of those ideas yourselves.</p>
 
-<pre><code>An important thing to note: Although I'm seperating the data science pipeline into parts, the life cylce of data science isn't sequential. You will often be doing data processing in all the other parts and vise versa.</code></pre>
+<pre><code>An important thing to note: Although I'm separating the data science pipeline into parts, the life cycle of data science isn't sequential. You will often be doing data processing in all the other parts and vise versa.</code></pre>
 
 </div>
 </div>
@@ -15343,7 +15345,7 @@ Are there missing values in column &#39;cases&#39;: False
 
 
 <div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
-<pre>&lt;matplotlib.collections.PathCollection at 0x7fbd3af9fbe0&gt;</pre>
+<pre>&lt;matplotlib.collections.PathCollection at 0x7f836356bca0&gt;</pre>
 </div>
 
 </div>
@@ -15371,20 +15373,20 @@ Are there missing values in column &#39;cases&#39;: False
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>From the looks of the graph, it's hard to tell if covid-19 had any noticable affect to the number of crimes that occurred in the year. There was about a 30,000 decrease in the number of crimes from 2019 to 2020. This decrease could be explained by there being less people outside due to covid lockdown, but there's no definitive answer. However, one very interesting trend is that during the years 2012 and 2016 there is a very drastic decrease in the number of reported crimes. What we know about those years is that a presidential election was going in the US. However, this doesn't explain why there is a drastic decrease in crime reports during these years. There could be a variety of reasons for this change:</p>
+<p>From the looks of the graph, it's hard to tell if covid-19 had any noticeable affect to the number of crimes that occurred in the year. There was about a 30,000 decrease in the number of crimes from 2019 to 2020. This decrease could be explained by there being less people outside due to covid lockdown, but there's no definitive answer. However, one very interesting trend is that during the years 2012 and 2016 there is a very drastic decrease in the number of reported crimes. What we know about those years is that a presidential election was going in the US. However, this doesn't explain why there is a drastic decrease in crime reports during these years. There could be a variety of reasons for this change:</p>
 
 <pre><code>    1) Less people in Los Angeles to report crimes because they were at the elections
     2) Less police officers to respond to crimes reports and record them
     3) There were simply less crimes that occurred
 </code></pre>
-<p>Also notice how despite 2020 also having a presidential election occurring, there isn't a sharp decrease in reported crimes. These questions are what makes data science so interesting as there could be thousands of answers for why the data does what it does and you will have to discover the most likely answer through analysis. You will likely need to use other datasets to see if there are any correlations you could find between datasets.</p>
+<p>Also notice how despite 2020 also having a presidential election occurring, there isn't a sharp decrease in reported crimes. These questions are what makes data science so interesting as there could be thousands of answers for why the data does what it does, and you will have to discover the most likely answer through analysis. You will likely need to use other datasets to see if there are any correlations you could find between datasets.</p>
 <p>In this case, there isn't any attribute in our dataframe that could help with explaining these trends so we will be moving on to analyze another part of our data.</p>
 
 </div>
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>Next we will be looking to see whether Covid-19 affected what times crimes occur at. For this we will create a function that  creates an array with every hour for each entry in the given dataframe. Then we will plot a histogram which counts the number of occurrences of each hour in the array and plots the occurrences.</p>
+<p>Next we will be looking to see whether Covid-19 affected what times crimes occur at. For this we will create a function that creates an array with every hour for each entry in the given dataframe. Then we will plot a histogram which counts the number of occurrences of each hour in the array and plots the occurrences.</p>
 <p>For more info on matplotlib histograms: <a href="https://matplotlib.org/3.5.0/api/_as_gen/matplotlib.pyplot.hist.html">link</a></p>
 
 </div>
@@ -15536,7 +15538,7 @@ Are there missing values in column &#39;cases&#39;: False
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>When observing the histograms the most noticable difference is that the percentage of crimes at 12 had decreased from a little above 8% to below 7%. We can also see that 12 o'clock before and during Covid-19 has the most crimes occur in the day. One explanation for this could be that because it was around lunchtime there would be more people in the streets so more likely for people to commit a crime in the crowd. Or it's possible that whenever a crime occurs a little before or after noon that most people default to reporting the crime as being at noon. Besides these obversations, there doesn't seem to be a noticable difference in the times crimes occur before and during Covid-19.</p>
+<p>When observing the histograms the most notable difference is that the percentage of crimes at 12 had decreased from a little above 8% to below 7%. We can also see that 12 o'clock before and during Covid-19 has the most crimes occur in the day. One explanation for this could be that because it was around lunchtime there would be more people in the streets so more likely for people to commit a crime in the crowd. Or it's possible that whenever a crime occurs a little before or after noon that most people default to reporting the crime as being at noon. Besides these observations, there doesn't seem to be a noticeable difference in the times crimes occur before and during Covid-19.</p>
 <p>So after a lack of results, how about we look at a more specific time frame and only look at crimes that occur during Covid-19. There could be a correlation between number of crimes that occur in a day and number of covid positives.</p>
 
 </div>
@@ -15628,8 +15630,8 @@ Are there missing values in column &#39;cases&#39;: False
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <p>Note: the number of crimes graph drops to almost zero around May 2022 because that dataset isn't updated as often as the covid-19 data</p>
-<p>Observing the plots we can see that there are large spikes in covid cases around December 2020 and December 2021. Interestingly we can also observe that smaller spikes in number of crimes had occured the day after the large spike in december 2020. But this trend doesn't also occur during December 2021 which makes it hard to tell whether Covid-19 was the cause of the spike in crimes. There is also a very large spike in crimes around May 25 2020, but it's likely that this wasn't caused by Covid-19 as that was around the time the <a href="https://en.wikipedia.org/wiki/George_Floyd">George Floyd</a> controversy occurred. In general, there doesn't seem to be much of a correlation between number of covid cases and crimes per day. There are increases in crime where there is a low amount of covid cases such as between 2021-7-25 and 2021-11-25. There does seem to be a slight increase in the number of crimes overtime, but it's too difficult to tell.</p>
-<p>So after another failure to observe if covid had any affect on number of crimes, we should move on to a different topic. We can observe if Covid-19 has any affect on what types of crimes would occur. For this we be recording the occurrences of each type of crime and graphing the top 10 most common crimes in Los Angeles. We will graph the percentage of each crime for times periods 2010-2019, 2020, 2021, and 2022 in order to observe if covid-19 had affected what types of crimes would occur more often or less.</p>
+<p>Observing the plots we can see that there are large spikes in covid cases around December 2020 and December 2021. Interestingly we can also observe that smaller spikes in number of crimes had occurred the day after the large spike in December 2020. But this trend doesn't also occur during December 2021 which makes it hard to tell whether Covid-19 was the cause of the spike in crimes. There is also a very large spike in crimes around May 25 2020, but it's likely that this wasn't caused by Covid-19 as that was around the time the <a href="https://en.wikipedia.org/wiki/George_Floyd">George Floyd</a> controversy occurred. In general, there doesn't seem to be much of a correlation between number of covid cases and crimes per day. There are increases in crime where there is a low amount of covid cases such as between 2021-7-25 and 2021-11-25. There does seem to be a slight increase in the number of crimes overtime, but it's too difficult to tell.</p>
+<p>So after another failure to observe if covid had any effect on number of crimes, we should move on to a different topic. We can observe if Covid-19 has any effect on what types of crimes would occur. For this we be recording the occurrences of each type of crime and graphing the top 10 most common crimes in Los Angeles. We will graph the percentage of each crime for times periods 2010-2019, 2020, 2021, and 2022 in order to observe if covid-19 had affected what types of crimes would occur more often or less.</p>
 
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
@@ -15760,7 +15762,7 @@ Are there missing values in column &#39;cases&#39;: False
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>We will now create a new dataframe that only contains the relevant information of the percenage that each of the 10 most common crimes per time period. This is done so that the <a href="https://realpython.com/pandas-plot-python/">dataframe.plot()</a> function can create a bar graph for the data.</p>
+<p>We will now create a new dataframe that only contains the relevant information of the percentage that each of the 10 most common crimes per time period. This is done so that the <a href="https://realpython.com/pandas-plot-python/">dataframe.plot()</a> function can create a bar graph for the data.</p>
 
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
@@ -15813,14 +15815,14 @@ Are there missing values in column &#39;cases&#39;: False
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>Based on the graph, the most noticable category that had a large increase in percentage is stolen vehicles. There is around a 2.5% increase between 2010-2019 and 2020. This also seems to be increasing with 2021 and 2022 both being at a higher percentage than the previous year. Theft of Identity also seems to be much higher in 2022 compared to 2020 and 2021. Although this could simply be because the year is still less than halfway through so the number of each crime hasn't averaged out yet. Also interesting to see that intimate partner violent has not increased at all despite covid-19 forcing people to be home more often. It's likely due to the fact that domestic violence often goes unreported, but there may be other reasons. In general, it seems that stolen vehicle crimes are the most notable increase during covid-19, maybe this could be something we can check in detail.</p>
+<p>Based on the graph, the most notable category that had a large increase in percentage is stolen vehicles. There is around a 2.5% increase between 2010-2019 and 2020. This also seems to be increasing with 2021 and 2022 both being at a higher percentage than the previous year. Theft of Identity also seems to be much higher in 2022 compared to 2020 and 2021. Although this could simply be because the year is still less than halfway through so the number of each crime hasn't averaged out yet. Also, interesting to see that intimate partner violent has not increased at all despite covid-19 forcing people to be home more often. It's likely due to the fact that domestic violence often goes unreported, but there may be other reasons. In general, it seems that stolen vehicle crimes are the most notable increase during covid-19, maybe this could be something we can check in detail.</p>
 
 </div>
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <h1 id="Machine-Learning">Machine Learning<a class="anchor-link" href="#Machine-Learning">&#182;</a></h1><p>For this phase of the data science pipeline we will be trying various algorithms like <a href="https://www.geeksforgeeks.org/python-linear-regression-using-sklearn/">Linear Regressions</a> or <a href="https://data36.com/polynomial-regression-python-scikit-learn/">Polynomial Regressions</a> to hopefully get a predictive model of a trend. A good model will allow us to predict values outside of our current data. In this case we will try to model what percentage of stolen vehicle crimes can occur during a year.</p>
-<p>We've noticed that stolen vehicle crimes are incredible common in Los Angeles and often times those on vacation will likely rent a car. So creating a model to see the percentage of stolen vehicle crimes in the future may help those wanting to vacation to Los Angeles think about whether it's a good idea.</p>
+<p>We've noticed that stolen vehicle crimes are incredible common in Los Angeles and often those on vacation will likely rent a car. So creating a model to see the percentage of stolen vehicle crimes in the future may help those wanting to vacation to Los Angeles think about whether it's a good idea.</p>
 <p>We'll first calculate the percentage of crimes each year that are stolen vehicle crimes and store them in an array.</p>
 
 </div>
@@ -15963,7 +15965,7 @@ Are there missing values in column &#39;cases&#39;: False
 
 
 <div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
-<pre>[&lt;matplotlib.lines.Line2D at 0x7fbd749821f0&gt;]</pre>
+<pre>[&lt;matplotlib.lines.Line2D at 0x7f83a6014f10&gt;]</pre>
 </div>
 
 </div>
@@ -16082,7 +16084,7 @@ Are there missing values in column &#39;cases&#39;: False
 
 
 <div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
-<pre>[&lt;matplotlib.lines.Line2D at 0x7fbd74a6b640&gt;]</pre>
+<pre>[&lt;matplotlib.lines.Line2D at 0x7f83a6092490&gt;]</pre>
 </div>
 
 </div>
@@ -16147,7 +16149,7 @@ Are there missing values in column &#39;cases&#39;: False
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <p>A R^2 of .846 is much better, but this also creates another problem. With a curve like this it seems as though the percentage of stolen vehicle crimes will increase a lot in the coming years which would be unrealistic. This would be a case of overfitting. Overfitting occurs when your model fits the data you have too well that it doesn't predict anything outside of your current data correctly. So despite the fact that our R^2 for a polynomial regression is good, this model likely isn't very helpful in predicting stolen vehicle crimes outside these set of years.</p>
 <p>For more info on overfitting and how to prevent it: <a href="https://medium.datadriveninvestor.com/the-problem-of-overfitting-in-regression-and-how-to-avoid-it-dac4d49d836f">link</a></p>
-<p>Based off the shape of our data points something like a bell shaped curve or sigmoid curve would probably fit the data much better. However, the sklearn library doesn't include models of these types which makes it difficult for us to model and predict curves like those. Maybe you could be the one to discover a good method of modeling those types of curves.</p>
+<p>Based off the shape of our data points something like a bell-shaped curve or sigmoid curve would probably fit the data much better. However, the sklearn library doesn't include models of these types which makes it difficult for us to model and predict curves like those. Maybe you could be the one to discover a good method of modeling those types of curves.</p>
 
 </div>
 </div>
@@ -16155,8 +16157,8 @@ Are there missing values in column &#39;cases&#39;: False
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <h1 id="Insights-Attained">Insights Attained<a class="anchor-link" href="#Insights-Attained">&#182;</a></h1><p>This what most consider the last part of the data science pipeline and where we try to draw insights from our data analyzed.</p>
 <p>After creating our graphs and models there doesn't seem to be a correlation between Covid-19 and the number of crimes that occur or times of crimes.</p>
-<p>What we can say with some semblence of confidence is that the types of crimes that occur has changed after Covid-19 arrived. Most notably, stolen vehicles crimes have gone up around 3% compared to before and after covid-19. Our models, while flawed, also show an upward trend in percentage of stolen vehicle crimes. While there's no telling why there are more stolen vehicles, we now know that there is an increase. A suggestion would be to station more police officers at very populated LA parking areas to catch thieves in the act. If you ever go to Los Angeles, be careful about where you park and double check that your car in locked.</p>
-<p>In general, our analysis doesn't give a good picture of whether Covid-19 affects Los Angeles crimes. But, there are plenty of other means of analyzing our data such as using location of crimes or the perpetrator of crimes in conjunction with Covid-19. In the future, we can tackle how these attributes relate to one another and hopefully get more confident results. You might even beat me to the punch.</p>
+<p>What we can say with some semblance of confidence is that the types of crimes that occur has changed after Covid-19 arrived. Most notably, stolen vehicles crimes have gone up around 3% compared to before and after covid-19. Our models, while flawed, also show an upward trend in percentage of stolen vehicle crimes. While there's no telling why there are more stolen vehicles, we now know that there is an increase. A suggestion would be to station more police officers at very populated LA parking areas to catch thieves in the act. If you ever go to Los Angeles, be careful about where you park and double check that your car in locked.</p>
+<p>In general, our analysis doesn't give a good picture of whether Covid-19 affects Los Angeles crimes. But there are plenty of other means of analyzing our data such as using location of crimes or the perpetrator of crimes in conjunction with Covid-19. In the future, we can tackle how these attributes relate to one another and hopefully get more confident results. You might even beat me to the punch.</p>
 
 </div>
 </div>
