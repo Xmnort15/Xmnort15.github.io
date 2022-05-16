@@ -14669,7 +14669,7 @@ a.anchor-link {
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h1 id="Processing-the-Data">Processing the Data<a class="anchor-link" href="#Processing-the-Data">&#182;</a></h1><p>The next step of the data science pipeline is processing the data, otherwise known as data wrangling. Most of the time the dataframe we get from reading a file will have issues. So in this step we will be fixing up the dataframe so that it will be easier to understand and easier to analyze. An important thing to note is often times this is the step that requires the <a href="https://medium.com/analytics-vidhya/a-data-cleaning-journey-2b0146407e44#:~:text=Whether%20you%20are%20a%20data%20engineer%20or%20a%20data%20scientist,from%20the%20data%20science%20process.">most time</a> for a data scientist.</p>
+<h1 id="Processing-the-Data">Processing the Data<a class="anchor-link" href="#Processing-the-Data">&#182;</a></h1><p>The next step of the data science pipeline is processing the data, otherwise known as data wrangling. Most of the time the dataframe we get from reading a file will have issues. So in this step we will be fixing up the dataframe so that it will be easier to understand and easier to analyze. Something important to know is often times this is the step that requires the <a href="https://medium.com/analytics-vidhya/a-data-cleaning-journey-2b0146407e44">most time</a> for a data scientist. Don't worry if you feel like you've been at this step for a long time.</p>
 <p>More info on data wrangling at: <a href="https://online.hbs.edu/blog/post/data-wrangling">link</a></p>
 <h4 id="We'll-start-with-cleaning-our-LAPD-crime-dataframe.">We'll start with cleaning our LAPD crime dataframe.<a class="anchor-link" href="#We'll-start-with-cleaning-our-LAPD-crime-dataframe.">&#182;</a></h4><p>One of the first things to do is to see if our dataframe contains any missing or duplicated data in its entries. Of course, if you won't be using an attribute in your dataframe that has missing values then there's not much of a reason. With our crime dataframe, we want to first check if there are duplicates so we need to use something that can be unique to each crime. It just so happens that each crime has a unique 'DR_NO' so we can count how many of these unique 'DR_NO' values are in the dataframe and compare it to the number of entries in the dataframe.</p>
 <p>Info about how to access columns or rows in the dataframe here: <a href="https://pandas.pydata.org/pandas-docs/stable/getting_started/intro_tutorials/03_subset_data.html">link</a></p>
@@ -15287,12 +15287,9 @@ Are there missing values in column &#39;cases&#39;: False
 <p>For more detailed info on what is data analysis: <a href="https://towardsdatascience.com/exploratory-data-analysis-8fc1cb20fd15">link</a></p>
 <p>In this tutorial we will mainly be plotting crime data overtime to see if Covid-19 had any effect on the number of crimes, types of crimes, or times of crimes. There are many other areas we can look at like whether the season affects covid-19 and crime or if there is a change in locations of crimes with covid-19. But for now, we will only be doing much more general covid-19 and crime analysis so you can potentially try one of those ideas yourselves.</p>
 
-<pre><code>An important thing to note: Although I'm separating the data science pipeline into parts, the life cycle of data science isn't sequential. You will often be doing data processing in all the other parts and vise versa.</code></pre>
+<pre><code>An important thing to note: Although I'm separating the data science pipeline into parts, the life cycle of data science isn't sequential. You will often be doing data processing in all the other parts and vise versa.
 
-</div>
-</div>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+</code></pre>
 <p>Below we are going to create a scatterplot of the number of reported crimes per year (2010-2021). It's possible that covid-19 had some affect to the number of crimes that occurred in 2020-2022 compared to 2010-2019.</p>
 <p>For more info of the matplotlib scatter function: <a href="https://www.geeksforgeeks.org/matplotlib-pyplot-scatter-in-python/">link</a></p>
 <p>We won't be including the number of crimes that occurred in 2022 because the year isn't finished yet at the time of this tutorial. If we were to include an unfinished year, then it's possible that it could affect our perception of the graph.</p>
@@ -15345,7 +15342,7 @@ Are there missing values in column &#39;cases&#39;: False
 
 
 <div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
-<pre>&lt;matplotlib.collections.PathCollection at 0x7f836356bca0&gt;</pre>
+<pre>&lt;matplotlib.collections.PathCollection at 0x7fdebc5a1be0&gt;</pre>
 </div>
 
 </div>
@@ -15965,7 +15962,7 @@ Are there missing values in column &#39;cases&#39;: False
 
 
 <div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
-<pre>[&lt;matplotlib.lines.Line2D at 0x7f83a6014f10&gt;]</pre>
+<pre>[&lt;matplotlib.lines.Line2D at 0x7fdefefe0eb0&gt;]</pre>
 </div>
 
 </div>
@@ -16084,7 +16081,7 @@ Are there missing values in column &#39;cases&#39;: False
 
 
 <div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
-<pre>[&lt;matplotlib.lines.Line2D at 0x7f83a6092490&gt;]</pre>
+<pre>[&lt;matplotlib.lines.Line2D at 0x7fdeff0c0f40&gt;]</pre>
 </div>
 
 </div>
